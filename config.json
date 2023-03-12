@@ -1,0 +1,10 @@
+{
+  "ownerNumber": [
+  "212679713244"
+  ],
+  "MAX_TOKEN": 3000,
+  "OPENAI_KEY": "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", 
+  "NOTA_1": "Consigue tu ApiKey en este enlace: https://platform.openai.com/account/api-keys",
+  "ORG_ID": "org-JtMPqGntcIv9iR4sWj6ZCIPH",
+  "NOTA_2": "Consigue tu ID de organizacion en este enlace: https://platform.openai.com/account/org-settings"
+}
