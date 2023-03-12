@@ -169,7 +169,7 @@ break
 case 'chatgpt': case 'ia': 
 if (!args[1]) return reply(`*[❗] أدخل طلبًا لاستخدام ميزة ChatGPT*\n\n*—◉ أمثلة على الطلبات والأوامر:*\n*◉ ${prefix + command} أعطني عرضًا تقديميًا عن الروبوتات ضد الإنسان*\n*◉ ${prefix + command} كود JS للعبة الورق*`)           
 try {
-const BotIA = await openai.createCompletion({ model: "text-davinci-003", prompt: textosinespacio, temperature: 0, max_tokens: MAX_TOKEN, stop: ["Ai:", "Human:"], top_p: 1, frequency_penalty: 0.2, presence_penalty: 0, })
+const BotIA = await openai.createCompletion({ model: "text-davinci-003", prompt: textosinespacio, temperature: 0.3, max_tokens: MAX_TOKEN, stop: ["Ai:", "Human:"], top_p: 1, frequency_penalty: 0.2, presence_penalty: 0, })
 reply(BotIA.data.choices[0].text.trim())
 } catch (qe) {
 reply("*[❗] خطأ في الخادم 1 ، ستتم تجربة خادم آخر...*\n\n*—◉ آخر:*\n" + qe)       
@@ -278,7 +278,7 @@ if (isGroup) chatstext = chatstext.replace("@", '').replace(prefix, '')
 console.log("->[\x1b[1;32mNew\x1b[1;37m]", color('Pregunta De', 'yellow'), color(pushname, 'lightblue'), `: "${chatstext}"`)
 conn.sendPresenceUpdate("composing", from);
 try {
-const response = await openai.createCompletion({ model: "text-davinci-003", prompt: chatstext, temperature: 0, max_tokens: MAX_TOKEN, stop: ["Ai:", "Human:"], top_p: 1, frequency_penalty: 0.2, presence_penalty: 0, })
+const response = await openai.createCompletion({ model: "text-davinci-003", prompt: chatstext, temperature: 0.3, max_tokens: MAX_TOKEN, stop: ["Ai:", "Human:"], top_p: 1, frequency_penalty: 0.2, presence_penalty: 0, })
 reply(response.data.choices[0].text.trim())
 } catch (eee) {
 reply("*[❗] Error en el servidor 1, se intentará con otro servidor...*\n\n*—◉ خطأ:*\n" + eee)       
